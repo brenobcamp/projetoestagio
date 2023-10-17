@@ -23,7 +23,4 @@ def pingar():
         ip = request.form['ip']
         resultados = ping_equipamento(ip)
         return resultados
-    # if request
-    # resultados = ping_equipamento(ip)
-    # return render_template("home.html", resultado=resultados)
-    # return request.form['ip']
+
