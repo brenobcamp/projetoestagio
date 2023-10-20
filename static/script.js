@@ -1,6 +1,7 @@
 const form = document.querySelector('.app__form');
 const janelaResultados = document.querySelector('.app__results');
 
+
 form.addEventListener('submit', async (e) => {
     e.preventDefault()
     const formData = new FormData(form)

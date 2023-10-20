@@ -7,14 +7,19 @@
     <script src="{{ url_for('static', filename='script.js')}}" defer></script>
 </head>
 <body>
-    <h1>Hello</h1>
+    <h1>Looking Glass</h1>
     
     <form action="ping" method="post" class="app__form" enctype="multipart/form-data">
         <input type="text" id="ip" name="ip" required>
+        <select id='equipamento' name='equipamento'>
+        {% for item in database %}
+            <option value="{{item.hostname}}">{{item.hostname}}</option>
+        {% endfor %}
+        </select>
         <button type="submit">Enviar</button>
     </form>
     <section class="app__results">
-
+        
     </section>
 </body>
 </html>
