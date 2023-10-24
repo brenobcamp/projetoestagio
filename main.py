@@ -66,4 +66,5 @@ def comando():
         resultados = executar_comando(formulario['comando'], equipamento_dict['ip'], equipamento_dict['username'], equipamento_dict['password'], equipamento_dict['device_type'])
         return resultados
 
+app.run()
 
