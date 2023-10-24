@@ -9,17 +9,27 @@
 <body>
     <h1>Looking Glass</h1>
     
-    <form action="ping" method="post" class="app__form" enctype="multipart/form-data">
-        <input type="text" id="ip" name="ip" required>
-        <select id='equipamento' name='equipamento'>
-        {% for item in database %}
-            <option value="{{item.hostname}}">{{item.hostname}}</option>
-        {% endfor %}
-        </select>
-        <button type="submit">Enviar</button>
+    <form id="form1" action="/ping" method="post" class="app__form" enctype="multipart/form-data">
+        <label for="ping_ip">Ping: </label>
+        <input type="text" id="ping_ip" name="ip" required>
+        <button form="form1" type="submit">Enviar</button>
     </form>
     <section class="app__results">
         
+    </section>
+
+    <section>
+        <form id="form2" action="/sendcommand" method="post" class="app__form_comando" enctype="multipart/form-data">
+            <label for="comando">Comando:</label><input type="text" id='comando' name="comando"><br>
+            <select id='equipamento' name='equipamento'>
+                {% for item in database %}
+                <option value="{{item.hostname}}">{{item.hostname}}</option>
+                {% endfor %}
+            </select>
+            <button form="form2" type="submit">Enviar</button>
+        </form>
+    </section>
+    <section class="app__comando_resultados">  
     </section>
 </body>
 </html>
