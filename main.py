@@ -5,7 +5,7 @@ import subprocess
 
 def ping_equipamento(ip):
     try:
-        result = subprocess.run(["ping", ip, '-c', "4"], stdout=subprocess.PIPE, text=True, check=True)
+        result = subprocess.run(["ping", ip, '-c', "4"], stdout=subprocess.PIPE, check=True)
         return result.stdout
     except subprocess.CalledProcessError as error:
         return error.output
